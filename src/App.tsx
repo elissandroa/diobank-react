@@ -8,15 +8,14 @@ const Box = styled.div`
   border-radius: 25px;
   padding-left: 15px;
 `
-
 function App() {
+
   return (
     <Layout>
       <Header />
       <Box>
         <h1>Faça o Login</h1>
       </Box>
-
       <label htmlFor="inputEmail">E-mail:</label>
       <input type="email" id="inputEmail" placeholder="Digite o email" />
       <label htmlFor="inputPassword">Senha:</label>
