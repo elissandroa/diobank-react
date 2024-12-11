@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 
 interface IButton  {
-    fncButton: () => void;
+    fncButton: () => any;
     action: string;
 }
 

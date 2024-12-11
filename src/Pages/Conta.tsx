@@ -1,6 +1,6 @@
 import { api } from "@/api"
 import { CardInfo } from "@/components/CardInfo"
-import { AppContext } from "@/main";
+import { AppContext } from "@/context/AppContext";
 import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
@@ -18,8 +18,8 @@ export const Conta = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const context = useContext(AppContext);
-    console.log(context);
+    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+
 
 
     if (userData && userData.id !== id) {
@@ -37,29 +37,31 @@ export const Conta = () => {
 
     const actualData = new Date();
 
-    return (
-        <Center>
-            <SimpleGrid columns={2} gap={4} paddingTop={16}   >
-                {userData ?
-                    <>
-                        <CardInfo
-                            mainContent={`Bem vindo ${userData?.name}`}
-                            content={`
+    if (!isLoggedIn && userData && navigate('/home'))
+        setIsLoggedIn(true);
+        return (
+            <Center>
+                <SimpleGrid columns={2} gap={4} paddingTop={16}   >
+                    {userData ?
+                        <>
+                            <CardInfo
+                                mainContent={`Bem vindo ${userData?.name}`}
+                                content={`
                 ${actualData.getDate()}/
                 ${actualData.getMonth()}/
                 ${actualData.getFullYear()} 
                 ${actualData.getHours()}:
                 ${actualData.getMinutes()}`}
-                        />
-                        <CardInfo
-                            mainContent="Saldo"
-                            content="R$ 2000,00"
-                        />
-                    </>
-                    :
-                    <Spinner size='xl' color='#FFFFFF'
-                    />}
-            </SimpleGrid>
-        </Center>
-    )
+                            />
+                            <CardInfo
+                                mainContent="Saldo"
+                                content="R$ 2000,00"
+                            />
+                        </>
+                        :
+                        <Spinner size='xl' color='#FFFFFF'
+                        />}
+                </SimpleGrid>
+            </Center>
+        )
 }

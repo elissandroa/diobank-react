@@ -1,5 +1,5 @@
 import { Provider } from "@/components/ui/provider"
-import { createContext, StrictMode } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Home } from "./Pages/Home.tsx"
@@ -9,20 +9,7 @@ import { Header } from "./components/Header.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { Conta } from "./Pages/Conta.tsx"
 import { ContaInfo } from "./Pages/ContaInfo.tsx"
-interface IAppContext {
-  user: string;
-}
-
-export const AppContext = createContext({} as IAppContext);
-
-const AppContextProvider = ({ children }: any) => {
-  const user = "Elissandro";
-  return (
-    <AppContext.Provider value={{ user }}>
-      {children}
-    </AppContext.Provider>
-  )
-}
+import { AppContextProvider } from "./context/AppContext.tsx"
 
 
 createRoot(document.getElementById('root')!).render(

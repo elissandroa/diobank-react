@@ -1,4 +1,4 @@
-import { AppContext } from '@/main';
+import { AppContext } from '@/context/AppContext';
 import { Box } from '@chakra-ui/react'
 import { useContext } from 'react'
 export const Header = () => {
