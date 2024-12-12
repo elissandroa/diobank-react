@@ -1,4 +1,5 @@
 import { AppContext } from '@/context/AppContext';
+import { changeLocalStorage } from '@/services/storage';
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react'
 import { useContext } from 'react'
 export const Header = () => {
@@ -7,6 +8,7 @@ export const Header = () => {
 
   const logout = () => {
     setIsLoggedIn(!isLoggedIn);
+    changeLocalStorage({login:false})
   }
 
   return (

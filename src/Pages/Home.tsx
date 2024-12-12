@@ -6,6 +6,7 @@ import { useContext, useState } from "react"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
 import { AppContext } from "@/context/AppContext"
+import { changeLocalStorage } from "@/services/storage"
 
 const Title = styled.h1`
   font-size:2em;
@@ -26,6 +27,7 @@ export const Home = () => {
       return alert('Email inválido!');
     }
     setIsLoggedIn(true);
+    changeLocalStorage({login:true});
     navigate('/conta/1')
   }
 
