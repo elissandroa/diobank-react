@@ -1,7 +1,7 @@
 import { login } from "../services/login"
 import { ButtonCard } from "../components/Button"
 import { Card } from "../components/Card"
-import { Box, Center, Input } from "@chakra-ui/react"
+import { Box, Center, Input, Text } from "@chakra-ui/react"
 import { useContext, useState } from "react"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
@@ -17,17 +17,21 @@ export const Home = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(AppContext);
+  const { setIsLoggedIn, setErrorLogin, errorLogin } = useContext(AppContext);
 
-  const validateUser = async (email: string) => {
-    const loggedIn = await login(email);
+  const validateUser = async (email: string, password: string) => {
+    if(!email) return setErrorLogin("Email obrigatório!");
+    if(!password) return setErrorLogin("A senha é obrigatória!");
+    const loggedIn = await login(email, password);
+    
 
     if (!loggedIn) {
       setIsLoggedIn(false);
-      return alert('Email inválido!');
+      return setErrorLogin('Email ou senha inválidos!')
     }
+
     setIsLoggedIn(true);
-    changeLocalStorage({login:true});
+    changeLocalStorage({ login: true });
     navigate('/conta/1')
   }
 
@@ -56,7 +60,11 @@ export const Home = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Center>
-            <ButtonCard fncButton={() => validateUser(email)} action="Entrar" />
+          <Text color='Red' fontWeight='bold' marginTop='10px' >{errorLogin}</Text>
+          </Center>
+          
+          <Center>
+            <ButtonCard fncButton={() => validateUser(email, password)} action="Entrar" />
           </Center>
         </Box>
       </Center>
