@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react"
 interface ICardInfo {
-    mainContent: string,
-    content: string
+    mainContent: string;
+    content: string;
 }
 
 export const CardInfo = ({ mainContent, content }: ICardInfo) => {

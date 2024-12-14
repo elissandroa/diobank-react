@@ -45,10 +45,10 @@ export const Conta = () => {
                     {userData ?
                         <>
                             <CardInfo
-                                mainContent={`Bem vindo ${userData?.name}`}
+                                mainContent={`Bem vindo ${userData?.name.split(" ")[0]}`}
                                 content={`
                 ${actualData.getDate()}/
-                ${actualData.getMonth()}/
+                ${actualData.getMonth()+1}/
                 ${actualData.getFullYear()} 
                 ${actualData.getHours()}:
                 ${actualData.getMinutes()}`}

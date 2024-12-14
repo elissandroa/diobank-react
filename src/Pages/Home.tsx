@@ -32,7 +32,7 @@ export const Home = () => {
 
     setIsLoggedIn(true);
     changeLocalStorage({ login: true });
-    navigate('/conta/1')
+    navigate('/infoconta')
   }
 
   return (

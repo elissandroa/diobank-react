@@ -7,9 +7,9 @@ interface IConta {
 }
 
 const conta: IConta = {
-    email: "teste@gmail.com",
+    email: "elissandro@gmail.com",
     password: "123456",
-    name:"Elissandro",
+    name:"Elissandro Aparecido Anastácio",
     balance: 2000.00,
     id:"1"
 }
