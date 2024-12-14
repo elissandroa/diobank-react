@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react"
 interface ICardInfo {
     mainContent: string;
     content: string;
+    children?: React.ReactNode;
 }
 
 export const CardInfo = ({ mainContent, content }: ICardInfo) => {
