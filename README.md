@@ -1,54 +1,60 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# 💳 diobank-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao **diobank-react**!  
+Um projeto de internet banking moderno, desenvolvido com **React**, **TypeScript** e **Vite**. Este repositório demonstra minhas habilidades em front-end, arquitetura de componentes, gerenciamento de estado e boas práticas de desenvolvimento.
 
-Currently, two official plugins are available:
+## 🚀 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O diobank-react simula uma interface de banco digital, permitindo ao usuário:
+- Realizar login seguro
+- Visualizar informações da conta e usuário
+- Conferir saldo e dados em tempo real
+- Experienciar navegação fluida com feedback visual (spinners, mensagens de boas-vindas, etc.)
 
-## Expanding the ESLint configuration
+Tudo isso com uma arquitetura limpa, testes automatizados e uso de tecnologias modernas.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Tecnologias e práticas utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- **React + Vite** para performance e DX moderna
+- **TypeScript** para tipagem estática e escalabilidade
+- **Styled Components** e **Chakra UI** para estilização elegante e responsiva
+- **React Router** para SPA e navegação protegida
+- **Testes unitários** com Jest (exemplo: validação de mensagens de boas-vindas e storage)
+- **Boas práticas**: Context API para autenticação, localStorage para persistência, código modular e reutilizável
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 💡 Diferenciais para recrutadores
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Código limpo, comentado e fácil de manter
+- Experiência de usuário aprimorada (mensagens claras, feedback visual)
+- Estrutura de projeto profissional, pronta para expansão
+- Testes automatizados para garantir confiabilidade
+- Licença MIT
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 👀 Como testar
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-=======
-# diobank-react
->>>>>>> c4fbd8d530882e8803c553046d9f60a7378a5ab9
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/elissandroa/diobank-react.git
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Rode a aplicação:
+   ```bash
+   npm run dev
+   ```
+4. Execute os testes:
+   ```bash
+   npm test
+   ```
+
+## 🧑‍💻 Sobre mim
+
+Desenvolvedor focado em entregar soluções robustas, escaláveis e com excelente UX. Sempre buscando aprender e evoluir, com experiência em projetos reais e formação Fullstack TypeScript Developer pela DIO.
+
+---
+
+Gostou? Entre em contato pelo [meu GitHub](https://github.com/elissandroa) ou LinkedIn! 🚀
+
+---
